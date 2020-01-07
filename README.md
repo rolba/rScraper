@@ -3,14 +3,14 @@ rScaper == Rolba Scraper! It is a helper module for scraping data using selenium
 
 Work in Progress.
 
-Example:
-from rScraper.rScraperGoogle import ScraperGoogle
-
-def main():
-    scrapingList = ["dog", "cat"]
-    googleScraper = ScraperGoogle(scrapingList)
-    googleScraper.openBrowser()
-    googleScraper.searchPhrase(1)
-
-if __name__ == '__main__':
-    main()
+Example:<br>
+from rScraper.rScraperGoogle import ScraperGoogle<br>
+<br>
+def main():<br>
+    scrapingList = ["dog", "cat"]<br>
+    googleScraper = ScraperGoogle(scrapingList)<br>
+    googleScraper.openBrowser()<br>
+    googleScraper.searchPhrase(1)<br>
+<br>
+if __name__ == '__main__':<br>
+    main()<br>
