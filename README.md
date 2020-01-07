@@ -1,7 +1,9 @@
 # rScraper
 rScaper == Rolba Scraper! It is a helper module for scraping data using selenium. 
 
-Work in Progress.
+Work in Progress due to the fact of rising competition. More on: https://ai-experiments.com/the-next-project-will-be/
+
+Planned to be released on March 2020
 
 Example:<br>
 from rScraper.rScraperGoogle import ScraperGoogle<br>
