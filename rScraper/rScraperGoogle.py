@@ -6,7 +6,7 @@ import os
 import shutil
 
 class ScraperGoogle(Scraper):
-    def __init__(self, scrapingList, directory, delOldDwldDir = False):
+    def __init__(self, scrapingItem, directory, delOldDwldDir = False):
         super(Scraper, self).__init__()
 
         if delOldDwldDir:
@@ -18,13 +18,13 @@ class ScraperGoogle(Scraper):
         self.downloadDir = directory
         self.searchedElementDirName = None
         self.allowedImagesExtensions = {"jpg", "jpeg", "png", "gif"}
-        self.scrpaingPhrasesList = scrapingList
+        self.scrpaingPhrase = scrapingItem
         self.url = {"begin":"https://www.google.com/search?q=",
                     "end":"&source=lnms&tbm=isch"}
 
-    def _openSearchEngine(self, searchItemIndex):
-        self.searchedElementDirName = os.path.join(self.downloadDir, self.scrpaingPhrasesList[searchItemIndex])
-        lUrl = self._getSearchItemUrl(self.scrpaingPhrasesList[searchItemIndex])
+    def _openSearchEngine(self):
+        self.searchedElementDirName = os.path.join(self.downloadDir, self.scrpaingPhrase)
+        lUrl = self._getSearchItemUrl(self.scrpaingPhrase)
         self.webDriver.get(lUrl)
         for _ in range(20):
             for _ in range(30):
@@ -37,7 +37,7 @@ class ScraperGoogle(Scraper):
                 break
 
     def _getSearchItemUrl(self, searchItem):
-        print(self.scrpaingPhrasesList)
+        print(self.scrpaingPhrase)
         lUrl = self.url["begin"] + \
                searchItem +\
                self.url["end"]
@@ -80,8 +80,8 @@ class ScraperGoogle(Scraper):
         urls = self._getImagesUrls()
         self._imgsGetter(urls)
 
-    def searchPhrase(self, searchItemIndex):
-        self._openSearchEngine(searchItemIndex)
+    def searchPhrase(self):
+        self._openSearchEngine()
 
 
 
