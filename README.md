@@ -9,10 +9,10 @@ Example:<br>
 from rScraper.rScraperGoogle import ScraperGoogle<br>
 <br>
 def main():<br>
-    scrapingList = ["dog", "cat"]<br>
+    scrapingItem = "cat"<br>
     googleScraper = ScraperGoogle(scrapingList)<br>
     googleScraper.openBrowser()<br>
-    googleScraper.searchPhrase(1)<br>
+    googleScraper.searchPhrase()<br>
     googleScraper.downloadImages()<br>
     googleScraper.closeBrowser()<br>
 <br>
