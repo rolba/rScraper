@@ -13,6 +13,7 @@ def main():<br>
     googleScraper = ScraperGoogle(scrapingList)<br>
     googleScraper.openBrowser()<br>
     googleScraper.searchPhrase(1)<br>
+    googleScraper.downloadImages()<br>
     googleScraper.closeBrowser()<br>
 <br>
 if __name__ == '__main__':<br>
