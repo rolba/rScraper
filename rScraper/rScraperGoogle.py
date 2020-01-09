@@ -6,7 +6,29 @@ import os
 import shutil
 
 class ScraperGoogle(Scraper):
-    def __init__(self, scrapingItem, directory, delOldDwldDir = False):
+    """
+    ScraperGoogle inherits from Scraper and implements not implemented methoods.
+    This class is responsible for implementing downloading mechanism from Google search images engine.
+    It has proper html parser and selenium implementations. It also saves data to hdd in localisation.
+    
+    This cals can only donwload one single search item. For multiple items you have to call rScraperWraper class.
+    Which in general concept should be a multithread class to speed up download process.
+    """
+    
+    def __init__(self, scrapingItem, directory, delOldDwldDir = True):
+        """
+        ScraperGoogle constructor.
+        
+        @type scrapingItem: string
+        @param scrapingItem: Item name that will be searched in google images. like "dog" or "cat"
+        
+        @type directory: os.path
+        @param directory: Directory where downloaded images will be stored inside "Download" dir
+        
+        @type delOldDwldDir: bool
+        @param delOldDwldDir: Default = True - Existing download directory will be deleted.
+        """
+        
         super(Scraper, self).__init__()
 
         if delOldDwldDir:
