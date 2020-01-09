@@ -45,6 +45,10 @@ class ScraperGoogle(Scraper):
                     "end":"&source=lnms&tbm=isch"}
 
     def _openSearchEngine(self):
+        """
+        Methood opens URL and scrolls down the page to receive an load all images returned by the search engine 
+        """
+        
         self.searchedElementDirName = os.path.join(self.downloadDir, self.scrpaingPhrase)
         lUrl = self._getSearchItemUrl(self.scrpaingPhrase)
         self.webDriver.get(lUrl)
@@ -59,6 +63,17 @@ class ScraperGoogle(Scraper):
                 break
 
     def _getSearchItemUrl(self, searchItem):
+        """
+        Method returns url that should be typed by selenium in the browser.
+        This url is a concatenated string with searched item and searched engine
+        
+        @type searchItem: string
+        @param searchItem: Searched item name.
+        
+        @rtype: string
+        @return: Url with searched item and proper search engine
+        
+        """
         print(self.scrpaingPhrase)
         lUrl = self.url["begin"] + \
                searchItem +\
